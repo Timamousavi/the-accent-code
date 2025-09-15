@@ -85,6 +85,15 @@
             transform: translateY(-8px) rotate(1deg) scale(1.02);
             box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.7), 0 10px 10px -5px rgba(0, 0, 0, 0.5);
         }
+        /* Button glow animation */
+        @keyframes pulse-glow {
+            0% { box-shadow: 0 0 5px #00A9A5; }
+            50% { box-shadow: 0 0 20px #00A9A5, 0 0 30px #00A9A5; }
+            100% { box-shadow: 0 0 5px #00A9A5; }
+        }
+        .button-glow {
+            animation: pulse-glow 2s infinite;
+        }
     </style>
 </head>
 <body class="antialiased">
@@ -101,7 +110,7 @@
             <a href="#promise" class="text-sm font-medium hover:text-accent transition-colors duration-200">Core Promise</a>
             <a href="#curriculum" class="text-sm font-medium hover:text-accent transition-colors duration-200">Curriculum</a>
             <a href="#testimonials" class="text-sm font-medium hover:text-accent transition-colors duration-200">Reviews</a>
-            <a href="#pricing" class="rounded-md px-4 py-2 bg-accent text-slate-900 text-sm font-bold hover:bg-teal-400 transition-colors duration-200">Get started</a>
+            <a href="#pricing" class="rounded-md px-4 py-2 bg-accent text-slate-900 text-sm font-bold hover:bg-teal-400 transition-colors duration-200 button-glow">Get started</a>
         </nav>
     </header>
 
