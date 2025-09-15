@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Accent Code</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap");
+      body {
+        font-family: "Inter", sans-serif;
+        background-color: #0a0a0a;
+        /* Replace the URL below with the path to your desired background image */
+        background-image: url("https://images.unsplash.com/photo-1517436073-305f886f4520?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        color: #f0f0f0;
+      }
+      .bg-custom-gradient {
+        background: linear-gradient(145deg, #1a1a1a, #282828);
+      }
+      .text-accent {
+        color: #add8e6; /* A light, professional blue for a premium feel */
+      }
+      .border-custom {
+        border-color: #333;
+      }
+      .shadow-custom {
+        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.5),
+          0 4px 6px -2px rgba(0, 0, 0, 0.25);
+      }
+      .neural-connection {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        overflow: hidden;
+        opacity: 0.1;
+        z-index: 0;
+      }
+      .neural-connection .dot {
+        position: absolute;
+        background-color: #add8e6;
+        border-radius: 50%;
+        animation: dot-flow 15s infinite linear;
+        box-shadow: 0 0 15px #add8e6;
+      }
+      @keyframes dot-flow {
+        from {
+          transform: translateX(0);
+          opacity: 0;
+        }
+        50% {
+          opacity: 1;
+        }
+        to {
+          transform: translateX(100vw);
+          opacity: 0;
+        }
+      }
+    </style>
+  </head>
+  <body class="antialiased">
+    <div class="neural-connection">
+      <div class="dot w-2 h-2 top-1/4" style="animation-delay: 0s"></div>
+      <div
+        class="dot w-3 h-3 top-1/2 left-1/4"
+        style="animation-delay: 3s"
+      ></div>
+      <div
+        class="dot w-1 h-1 top-3/4 right-1/3"
+        style="animation-delay: 6s"
+      ></div>
+      <div
+        class="dot w-4 h-4 top-1/4 right-1/4"
+        style="animation-delay: 9s"
+      ></div>
+      <div
+        class="dot w-2 h-2 bottom-1/4 left-1/2"
+        style="animation-delay: 12s"
+      ></div>
+    </div>
+
+    <header
+      class="max-w-6xl mx-auto px-6 py-8 flex items-center justify-between relative z-10"
+    >
+      <div class="flex items-center gap-4">
+        <h1 class="text-3xl font-extrabold text-accent">The Accent Code</h1>
+      </div>
+      <nav class="flex items-center gap-4">
+        <a
+          href="#promise"
+          class="text-sm font-medium hover:text-accent transition-colors duration-200"
+          >Core Promise</a
+        >
+        <a
+          href="#curriculum"
+          class="text-sm font-medium hover:text-accent transition-colors duration-200"
+          >Curriculum</a
+        >
+        <a
+          href="#testimonials"
+          class="text-sm font-medium hover:text-accent transition-colors duration-200"
+          >Reviews</a
+        >
+        <a
+          href="#pricing"
+          class="rounded-md px-4 py-2 bg-accent text-slate-900 text-sm font-semibold hover:bg-blue-300 transition-colors duration-200"
+          >Get started</a
+        >
+      </nav>
+    </header>
+
+    <main class="max-w-6xl mx-auto px-6 relative z-10">
+      <section
+        id="promise"
+        class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center py-20"
+      >
+        <div>
+          <h2
+            class="text-4xl md:text-5xl font-extrabold leading-tight tracking-tight"
+          >
+            Gain confident control over your
+            <span class="text-accent">American English</span> pronunciation.
+          </h2>
+          <p class="mt-6 text-lg text-slate-300">
+            In **8 weeks**, you will scientifically retrain your speech muscles
+            and ear-brain connection to speak with clarity, natural rhythm, and
+            fluency. This is a self-paced, private program designed for
+            measurable results.
+          </p>
+          <div class="mt-8 flex flex-wrap gap-4">
+            <a
+              href="#pricing"
+              class="px-6 py-3 bg-accent text-slate-900 rounded-lg font-extrabold hover:bg-blue-300 transition-colors duration-200 shadow-custom"
+              >Start here</a
+            >
+            <a
+              href="#curriculum"
+              class="px-6 py-3 border border-custom rounded-lg font-medium hover:bg-slate-800 transition-colors duration-200"
+              >Explore the curriculum</a
+            >
+          </div>
+        </div>
+        <div class="bg-custom-gradient p-8 rounded-xl shadow-custom">
+          <h3 class="text-2xl font-bold text-accent">Ready to begin?</h3>
+          <p class="text-slate-400 mt-2">
+            Enter your email to receive a free mini-lesson and assessment.
+          </p>
+          <form class="mt-6 grid gap-4">
+            <input
+              class="w-full bg-slate-800 border-custom text-white rounded-md px-4 py-3 focus:outline-none focus:ring-2 focus:ring-accent"
+              placeholder="Your name"
+            />
+            <input
+              class="w-full bg-slate-800 border-custom text-white rounded-md px-4 py-3 focus:outline-none focus:ring-2 focus:ring-accent"
+              placeholder="Email"
+            />
+            <button
+              class="w-full rounded-md px-4 py-3 bg-accent text-slate-900 font-extrabold hover:bg-blue-300 transition-colors duration-200"
+            >
+              Get the free lesson
+            </button>
+          </form>
+        </div>
+      </section>
+
+      <hr class="my-16 border-slate-700" />
+
+      <section id="curriculum" class="py-12">
+        <h3 class="text-3xl font-bold">
+          Course Structure: The 8-Week Transformation
+        </h3>
+        <p class="text-slate-400 mt-4">
+          A clear, step-by-step roadmap to fluency and confidence.
+        </p>
+        <div class="mt-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <!-- Module 1 -->
+          <div class="bg-custom-gradient rounded-xl p-6 shadow-custom">
+            <div class="text-sm font-semibold text-accent">
+              Module 1 • Week 1
+            </div>
+            <div class="mt-2 text-xl font-bold">
+              The Neuroscience of a New Accent
+            </div>
+            <p class="mt-3 text-slate-400">
+              Learn the science behind accent modification, set a baseline with
+              a diagnostic recording, and understand how your brain will form
+              new neural pathways for American English.
+            </p>
+          </div>
+          <!-- Module 2 -->
+          <div class="bg-custom-gradient rounded-xl p-6 shadow-custom">
+            <div class="text-sm font-semibold text-accent">
+              Module 2 • Weeks 2-3
+            </div>
+            <div class="mt-2 text-xl font-bold">
+              The Building Blocks - American English Phonetics
+            </div>
+            <p class="mt-3 text-slate-400">
+              Master individual American English sounds by learning the
+              International Phonetic Alphabet (IPA) and practicing difficult
+              sounds like the American 'R' and Flap 'T'.
+            </p>
+          </div>
+          <!-- Module 3 -->
+          <div class="bg-custom-gradient rounded-xl p-6 shadow-custom">
+            <div class="text-sm font-semibold text-accent">
+              Module 3 • Week 4
+            </div>
+            <div class="mt-2 text-xl font-bold">
+              The Music of Speech - Prosody & Intonation
+            </div>
+            <p class="mt-3 text-slate-400">
+              Go beyond individual sounds to understand the "music" of American
+              English, including stress, rhythm, and intonation patterns that
+              carry meaning.
+            </p>
+          </div>
+          <!-- Module 4 -->
+          <div class="bg-custom-gradient rounded-xl p-6 shadow-custom">
+            <div class="text-sm font-semibold text-accent">
+              Module 4 • Week 5
+            </div>
+            <div class="mt-2 text-xl font-bold">
+              Connected Speech - The Secrets of Natural Flow
+            </div>
+            <p class="mt-3 text-slate-400">
+              Discover the "shortcuts" of natural, flowing speech, such as
+              linking words and reductions, to sound more fluent and less like
+              you are "over-enunciating."
+            </p>
+          </div>
+          <!-- Module 5 -->
+          <div class="bg-custom-gradient rounded-xl p-6 shadow-custom">
+            <div class="text-sm font-semibold text-accent">
+              Module 5 • Weeks 6-7
+            </div>
+            <div class="mt-2 text-xl font-bold">
+              Active Training & Integration
+            </div>
+            <p class="mt-3 text-slate-400">
+              Put all the skills together with advanced practice techniques like
+              scientific shadowing, where you analyze and mimic native speakers
+              to refine your skills.
+            </p>
+          </div>
+          <!-- Module 6 -->
+          <div class="bg-custom-gradient rounded-xl p-6 shadow-custom">
+            <div class="text-sm font-semibold text-accent">
+              Module 6 • Week 8
+            </div>
+            <div class="mt-2 text-xl font-bold">
+              Real-World Application & Lifelong Practice
+            </div>
+            <p class="mt-3 text-slate-400">
+              Transition from structured practice to confident, real-world
+              application. Re-record your diagnostic paragraph to see your
+              incredible progress and create a lifelong practice plan.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <hr class="my-16 border-slate-700" />
+
+      <section id="ai-tools" class="py-12">
+        <h3 class="text-3xl font-bold">Your AI-Powered Tools</h3>
+        <p class="text-slate-400 mt-4">
+          Enhance your learning with cutting-edge tools powered by Gemini AI.
+        </p>
+        <div class="mt-8 grid grid-cols-1 md:grid-cols-2 gap-6">
+          <!-- AI Pronunciation Coach -->
+          <div
+            class="bg-custom-gradient p-8 rounded-xl shadow-custom flex flex-col h-full"
+          >
+            <h4 class="text-2xl font-bold text-accent">
+              AI Pronunciation Coach
+            </h4>
+            <p class="text-slate-400 mt-2 flex-grow">
+              Your personal tutor for instant, accurate answers on phonetics,
+              rhythm, and more. Ask any question about your course material.
+            </p>
+            <div class="mt-6 flex flex-col gap-4">
+              <textarea
+                id="coachInput"
+                class="w-full bg-slate-800 border-custom text-white rounded-md px-4 py-3 focus:outline-none focus:ring-2 focus:ring-accent"
+                placeholder="Ask the AI a question about your accent training..."
+              ></textarea>
+              <button
+                onclick="getAICoachResponse()"
+                class="w-full rounded-md px-4 py-3 bg-accent text-slate-900 font-extrabold hover:bg-blue-400 transition-colors duration-200"
+              >
+                Ask the Coach
+              </button>
+            </div>
+            <div
+              id="coachResponse"
+              class="mt-4 p-4 rounded-md bg-slate-800 text-slate-300 hidden"
+            ></div>
+          </div>
+
+          <!-- Text-to-Speech Tool -->
+          <div
+            class="bg-custom-gradient p-8 rounded-xl shadow-custom flex flex-col h-full"
+          >
+            <h4 class="text-2xl font-bold text-accent">Text-to-Speech Tool</h4>
+            <p class="text-slate-400 mt-2 flex-grow">
+              Hear any text pronounced with a native American accent. Choose a
+              voice and practice your listening skills.
+            </p>
+            <div class="mt-6 flex flex-col gap-4">
+              <textarea
+                id="ttsInput"
+                class="w-full bg-slate-800 border-custom text-white rounded-md px-4 py-3 focus:outline-none focus:ring-2 focus:ring-accent"
+                placeholder="Type or paste text to hear it..."
+              ></textarea>
+              <select
+                id="voiceSelect"
+                class="w-full bg-slate-800 border-custom text-white rounded-md px-4 py-3 focus:outline-none focus:ring-2 focus:ring-accent"
+              >
+                <option value="Kore">Kore (Firm)</option>
+                <option value="Puck">Puck (Upbeat)</option>
+                <option value="Zephyr">Zephyr (Bright)</option>
+              </select>
+              <button
+                onclick="generateTTSAudio()"
+                class="w-full rounded-md px-4 py-3 bg-accent text-slate-900 font-extrabold hover:bg-blue-400 transition-colors duration-200"
+              >
+                Generate Speech
+              </button>
+            </div>
+            <audio id="audioPlayer" controls class="mt-4 hidden"></audio>
+          </div>
+        </div>
+      </section>
+
+      <hr class="my-16 border-slate-700" />
+
+      <section id="testimonials" class="py-12">
+        <h3 class="text-2xl font-bold">What students say</h3>
+        <div class="mt-6 grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div class="bg-custom-gradient p-6 rounded-xl shadow-custom">
+            <div class="text-slate-300 text-lg italic">
+              "I improved my speaking score by 2 bands in 6 weeks."
+            </div>
+            <div class="mt-4 text-sm font-semibold text-accent">Sara K.</div>
+          </div>
+          <div class="bg-custom-gradient p-6 rounded-xl shadow-custom">
+            <div class="text-slate-300 text-lg italic">
+              "Practical, fast, and fun drills. My confidence shot up."
+            </div>
+            <div class="mt-4 text-sm font-semibold text-accent">Omid F.</div>
+          </div>
+          <div class="bg-custom-gradient p-6 rounded-xl shadow-custom">
+            <div class="text-slate-300 text-lg italic">
+              "I finally sound like I mean it when I speak English."
+            </div>
+            <div class="mt-4 text-sm font-semibold text-accent">Lina P.</div>
+          </div>
+        </div>
+      </section>
+
+      <hr class="my-16 border-slate-700" />
+
+      <section id="pricing" class="py-12">
+        <h3 class="text-2xl font-bold">Pricing</h3>
+        <div class="mt-6 grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div
+            class="bg-custom-gradient p-8 rounded-xl shadow-custom border border-custom flex flex-col justify-between"
+          >
+            <div>
+              <div class="text-slate-400 text-lg">
+                The 8-Week Transformation
+              </div>
+              <div class="text-5xl font-extrabold mt-2 text-accent">$149</div>
+              <ul class="mt-6 text-slate-300 space-y-2 list-disc list-inside">
+                <li>Self-paced, 8-week program</li>
+                <li>Includes all 6 modules</li>
+                <li>Lifetime access to all video lessons and resources</li>
+                <li>Guided self-assessment and feedback tools</li>
+              </ul>
+            </div>
+            <a
+              href="#"
+              class="mt-8 w-full block text-center rounded-md px-4 py-3 bg-accent text-slate-900 font-extrabold hover:bg-teal-400 transition-colors duration-200"
+              >Enroll Now</a
+            >
+          </div>
+          <div
+            class="bg-custom-gradient p-8 rounded-xl shadow-custom border border-custom flex flex-col justify-between"
+          >
+            <div>
+              <div class="text-slate-400 text-lg">
+                The 8-Week Transformation + Coaching
+              </div>
+              <div class="text-5xl font-extrabold mt-2 text-accent">$399</div>
+              <ul class="mt-6 text-slate-300 space-y-2 list-disc list-inside">
+                <li>**Everything in the self-paced course, plus:**</li>
+                <li>4x 30-minute one-on-one coaching calls</li>
+                <li>Personalized feedback on your diagnostic recordings</li>
+                <li>
+                  Custom practice plans to target your specific challenges
+                </li>
+              </ul>
+            </div>
+            <a
+              href="#"
+              class="mt-8 w-full block text-center rounded-md px-4 py-3 bg-accent text-slate-900 font-extrabold hover:bg-teal-400 transition-colors duration-200"
+              >Enroll with Coaching</a
+            >
+          </div>
+        </div>
+      </section>
+
+      <hr class="my-16 border-slate-700" />
+
+      <section id="resources" class="py-12">
+        <h3 class="text-2xl font-bold">Free Resources</h3>
+        <p class="text-slate-400 mt-4">
+          Short drills, downloadable cheat sheets, and a mini assessment to get
+          you started.
+        </p>
+        <div class="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div
+            class="bg-custom-gradient rounded-lg p-6 shadow-custom border border-custom"
+          >
+            <div class="font-semibold text-lg">10-Minute Daily Drill</div>
+            <div class="text-slate-400 text-sm mt-1">
+              Practice daily and feel the difference.
+            </div>
+            <div class="mt-4">
+              <a
+                href="#"
+                class="text-sm font-medium text-accent hover:underline"
+                >Download &rarr;</a
+              >
+            </div>
+          </div>
+          <div
+            class="bg-custom-gradient rounded-lg p-6 shadow-custom border border-custom"
+          >
+            <div class="font-semibold text-lg">Pronunciation Cheat Sheet</div>
+            <div class="text-slate-400 text-sm mt-1">
+              Mouth shapes for tricky American sounds.
+            </div>
+            <div class="mt-4">
+              <a
+                href="#"
+                class="text-sm font-medium text-accent hover:underline"
+                >Download &rarr;</a
+              >
+            </div>
+          </div>
+          <div
+            class="bg-custom-gradient rounded-lg p-6 shadow-custom border border-custom"
+          >
+            <div class="font-semibold text-lg">Conversation Scripts</div>
+            <div class="text-slate-400 text-sm mt-1">
+              Use these to practice real-world conversations.
+            </div>
+            <div class="mt-4">
+              <a
+                href="#"
+                class="text-sm font-medium text-accent hover:underline"
+                >Download &rarr;</a
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="mt-20 border-t border-slate-700 bg-slate-900 py-8">
+      <div
+        class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-4 text-slate-400"
+      >
+        <div>
+          <div class="font-bold text-white">The Accent Code</div>
+          <div class="text-sm mt-1">
+            Made with care by Tima Mousavi &copy; 2025
+          </div>
+        </div>
+        <div class="text-sm">
+          Follow us on social media
+          <div class="mt-2 flex gap-4">
+            <a href="#" class="hover:text-accent transition-colors duration-200"
+              >YouTube</a
+            >
+            <a href="#" class="hover:text-accent transition-colors duration-200"
+              >Instagram</a
+            >
+            <a href="#" class="hover:text-accent transition-colors duration-200"
+              >Telegram</a
+            >
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script>
+      const apiKey = "";
+
+      // Helper function to decode base64 and create a WAV blob
+      function base64ToArrayBuffer(base64) {
+        const binaryString = window.atob(base64);
+        const len = binaryString.length;
+        const bytes = new Uint8Array(len);
+        for (let i = 0; i < len; i++) {
+          bytes[i] = binaryString.charCodeAt(i);
+        }
+        return bytes.buffer;
+      }
+
+      function pcmToWav(pcmData, sampleRate) {
+        const dataLength = pcmData.length * 2;
+        const buffer = new ArrayBuffer(44 + dataLength);
+        const view = new DataView(buffer);
+
+        // RIFF chunk descriptor
+        writeString(view, 0, "RIFF");
+        view.setUint32(4, 36 + dataLength, true);
+        writeString(view, 8, "WAVE");
+
+        // fmt sub-chunk
+        writeString(view, 12, "fmt ");
+        view.setUint32(16, 16, true); // Subchunk1Size
+        view.setUint16(20, 1, true); // AudioFormat (1=PCM)
+        view.setUint16(22, 1, true); // NumChannels
+        view.setUint32(24, sampleRate, true);
+        view.setUint32(28, sampleRate * 2, true); // ByteRate
+        view.setUint16(32, 2, true); // BlockAlign
+        view.setUint16(34, 16, true); // BitsPerSample
+
+        // data sub-chunk
+        writeString(view, 36, "data");
+        view.setUint32(40, dataLength, true);
+
+        // Write PCM data
+        for (let i = 0; i < pcmData.length; i++) {
+          view.setInt16(44 + i * 2, pcmData[i], true);
+        }
+
+        return new Blob([view], { type: "audio/wav" });
+      }
+
+      function writeString(view, offset, string) {
+        for (let i = 0; i < string.length; i++) {
+          view.setUint8(offset + i, string.charCodeAt(i));
+        }
+      }
+
+      // --- AI Pronunciation Coach Logic ---
+      async function getAICoachResponse() {
+        const userInput = document.getElementById("coachInput").value;
+        const responseDiv = document.getElementById("coachResponse");
+        if (!userInput) {
+          return;
+        }
+
+        responseDiv.style.display = "block";
+        responseDiv.innerHTML = "Thinking...";
+
+        const systemPrompt =
+          "You are an expert American English pronunciation coach. Provide clear, concise, and helpful advice to a student learning the American accent. Use simple language and encouraging tone. Focus on practical tips and phonetic explanations.";
+
+        const payload = {
+          contents: [{ parts: [{ text: userInput }] }],
+          systemInstruction: {
+            parts: [{ text: systemPrompt }],
+          },
+          tools: [{ google_search: {} }],
+        };
+
+        const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-05-20:generateContent?key=${apiKey}`;
+
+        try {
+          const response = await fetch(apiUrl, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(payload),
+          });
+
+          if (!response.ok) {
+            throw new Error(`API call failed with status: ${response.status}`);
+          }
+
+          const result = await response.json();
+          const text =
+            result.candidates?.[0]?.content?.parts?.[0]?.text ||
+            "Sorry, I couldn't generate a response. Please try again.";
+          responseDiv.innerHTML = text;
+        } catch (error) {
+          console.error("Error fetching AI response:", error);
+          responseDiv.innerHTML = "An error occurred. Please try again later.";
+        }
+      }
+
+      // --- TTS Tool Logic ---
+      async function generateTTSAudio() {
+        const textInput = document.getElementById("ttsInput").value;
+        const voiceName = document.getElementById("voiceSelect").value;
+        const audioPlayer = document.getElementById("audioPlayer");
+
+        if (!textInput) {
+          return;
+        }
+
+        const payload = {
+          contents: [
+            {
+              parts: [
+                {
+                  text: `Say this phrase in a clear, standard American accent: "${textInput}"`,
+                },
+              ],
+            },
+          ],
+          generationConfig: {
+            responseModalities: ["AUDIO"],
+            speechConfig: {
+              voiceConfig: {
+                prebuiltVoiceConfig: { voiceName: voiceName },
+              },
+            },
+          },
+        };
+
+        const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-tts:generateContent?key=${apiKey}`;
+
+        audioPlayer.style.display = "none";
+        audioPlayer.pause();
+        audioPlayer.removeAttribute("src");
+
+        try {
+          const response = await fetch(apiUrl, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(payload),
+          });
+
+          if (!response.ok) {
+            throw new Error(`API call failed with status: ${response.status}`);
+          }
+
+          const result = await response.json();
+          const part = result?.candidates?.[0]?.content?.parts?.[0];
+          const audioData = part?.inlineData?.data;
+          const mimeType = part?.inlineData?.mimeType;
+
+          if (audioData && mimeType && mimeType.startsWith("audio/")) {
+            const sampleRateMatch = mimeType.match(/rate=(\d+)/);
+            if (!sampleRateMatch) {
+              throw new Error(
+                "Could not determine sample rate from MIME type."
+              );
+            }
+            const sampleRate = parseInt(sampleRateMatch[1], 10);
+            const pcmData = base64ToArrayBuffer(audioData);
+            const pcm16 = new Int16Array(pcmData);
+            const wavBlob = pcmToWav(pcm16, sampleRate);
+            const audioUrl = URL.createObjectURL(wavBlob);
+            audioPlayer.src = audioUrl;
+            audioPlayer.style.display = "block";
+          } else {
+            alert("An error occurred. The audio could not be generated.");
+          }
+        } catch (error) {
+          console.error("Error fetching TTS audio:", error);
+          alert("An error occurred. Please try again later.");
+        }
+      }
+    </script>
+  </body>
+</html>
