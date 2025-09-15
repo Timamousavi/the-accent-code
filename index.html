@@ -67,11 +67,23 @@
                 opacity: 0;
             }
         }
+        /* Custom CSS for card animations */
+        .card-hidden {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94), transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+        .card-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
         /* Hover effects */
+        .card-hover-effect {
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
         .card-hover-effect:hover {
             transform: translateY(-8px) rotate(1deg) scale(1.02);
             box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.7), 0 10px 10px -5px rgba(0, 0, 0, 0.5);
-            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
         }
     </style>
 </head>
@@ -103,7 +115,7 @@
                     <a href="#curriculum" class="px-6 py-3 border border-custom rounded-lg font-medium hover:bg-slate-800 transition-colors duration-200">Explore the Full Curriculum &rarr;</a>
                 </div>
             </div>
-            <div class="bg-custom-gradient p-8 rounded-xl shadow-custom card-hover-effect">
+            <div class="bg-custom-gradient p-8 rounded-xl shadow-custom card-hidden card-hover-effect">
                 <h3 class="text-2xl font-bold text-accent">Unlock Your Free Mini-Lesson.</h3>
                 <p class="text-slate-400 mt-2">Get an instant assessment and a 10-minute training drill. No commitment, just pure value.</p>
                 <form class="mt-6 grid gap-4">
@@ -119,7 +131,7 @@
             <p class="text-slate-400 mt-4">We've broken down the complex science of accent mastery into a simple, step-by-step roadmap that works.</p>
             <div class="mt-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 <!-- Module 1 -->
-                <div class="bg-custom-gradient rounded-xl p-6 shadow-custom card-hover-effect">
+                <div class="bg-custom-gradient rounded-xl p-6 shadow-custom card-hidden card-hover-effect">
                     <div class="text-sm font-semibold text-accent">Module 1 • Week 1</div>
                     <div class="mt-2 text-xl font-bold">Foundation & Mindset</div>
                     <p class="mt-3 text-slate-400">
@@ -127,7 +139,7 @@
                     </p>
                 </div>
                 <!-- Module 2 -->
-                <div class="bg-custom-gradient rounded-xl p-6 shadow-custom card-hover-effect">
+                <div class="bg-custom-gradient rounded-xl p-6 shadow-custom card-hidden card-hover-effect">
                     <div class="text-sm font-semibold text-accent">Module 2 • Weeks 2-3</div>
                     <div class="mt-2 text-xl font-bold">Mastering Core Sounds</div>
                     <p class="mt-3 text-slate-400">
@@ -135,7 +147,7 @@
                     </p>
                 </div>
                 <!-- Module 3 -->
-                <div class="bg-custom-gradient rounded-xl p-6 shadow-custom card-hover-effect">
+                <div class="bg-custom-gradient rounded-xl p-6 shadow-custom card-hidden card-hover-effect">
                     <div class="text-sm font-semibold text-accent">Module 3 • Week 4</div>
                     <div class="mt-2 text-xl font-bold">The Music of English</div>
                     <p class="mt-3 text-slate-400">
@@ -143,7 +155,7 @@
                     </p>
                 </div>
                 <!-- Module 4 -->
-                <div class="bg-custom-gradient rounded-xl p-6 shadow-custom card-hover-effect">
+                <div class="bg-custom-gradient rounded-xl p-6 shadow-custom card-hidden card-hover-effect">
                     <div class="text-sm font-semibold text-accent">Module 4 • Week 5</div>
                     <div class="mt-2 text-xl font-bold">Seamless Connected Speech</div>
                     <p class="mt-3 text-slate-400">
@@ -151,7 +163,7 @@
                     </p>
                 </div>
                 <!-- Module 5 -->
-                <div class="bg-custom-gradient rounded-xl p-6 shadow-custom card-hover-effect">
+                <div class="bg-custom-gradient rounded-xl p-6 shadow-custom card-hidden card-hover-effect">
                     <div class="text-sm font-semibold text-accent">Module 5 • Weeks 6-7</div>
                     <div class="mt-2 text-xl font-bold">Active Practice & Refinement</div>
                     <p class="mt-3 text-slate-400">
@@ -159,7 +171,7 @@
                     </p>
                 </div>
                 <!-- Module 6 -->
-                <div class="bg-custom-gradient rounded-xl p-6 shadow-custom card-hover-effect">
+                <div class="bg-custom-gradient rounded-xl p-6 shadow-custom card-hidden card-hover-effect">
                     <div class="text-sm font-semibold text-accent">Module 6 • Week 8</div>
                     <div class="mt-2 text-xl font-bold">Confidence & Consistency</div>
                     <p class="mt-3 text-slate-400">
@@ -174,7 +186,7 @@
             <p class="text-slate-400 mt-4">Enhance your learning with cutting-edge tools powered by Gemini AI.</p>
             <div class="mt-8 grid grid-cols-1 md:grid-cols-2 gap-6">
                 <!-- AI Pronunciation Coach -->
-                <div class="bg-custom-gradient p-8 rounded-xl shadow-custom flex flex-col h-full card-hover-effect">
+                <div class="bg-custom-gradient p-8 rounded-xl shadow-custom flex flex-col h-full card-hidden card-hover-effect">
                     <h4 class="text-2xl font-bold text-accent">AI Pronunciation Coach</h4>
                     <p class="text-slate-400 mt-2 flex-grow">Your personal tutor for instant, accurate answers on phonetics, rhythm, and more. Ask any question about your course material.</p>
                     <div class="mt-6 flex flex-col gap-4">
@@ -185,7 +197,7 @@
                 </div>
 
                 <!-- Text-to-Speech Tool -->
-                <div class="bg-custom-gradient p-8 rounded-xl shadow-custom flex flex-col h-full card-hover-effect">
+                <div class="bg-custom-gradient p-8 rounded-xl shadow-custom flex flex-col h-full card-hidden card-hover-effect">
                     <h4 class="text-2xl font-bold text-accent">Text-to-Speech Tool</h4>
                     <p class="text-slate-400 mt-2 flex-grow">Hear any text pronounced with a native American accent. Choose a voice and practice your listening skills.</p>
                     <div class="mt-6 flex flex-col gap-4">
@@ -205,21 +217,21 @@
         <section id="testimonials" class="py-12">
             <h3 class="text-2xl font-bold">Transform Your Confidence. Hear What Our Students Say.</h3>
             <div class="mt-6 grid grid-cols-1 md:grid-cols-3 gap-6">
-                <div class="bg-custom-gradient p-6 rounded-xl shadow-custom card-hover-effect">
+                <div class="bg-custom-gradient p-6 rounded-xl shadow-custom card-hidden card-hover-effect">
                     <div class="flex items-center gap-4 mb-4">
                         <img src="https://i.ibb.co/ybB9d6F/Gemini-Generated-Image-pafo69pafo69pafo.png" alt="Javier S." class="w-16 h-16 rounded-full object-cover">
                         <div class="font-semibold text-accent">Javier S.</div>
                     </div>
                     <div class="text-slate-300 text-lg italic">"I'm a native Spanish speaker, and after just 6 weeks, my colleagues have noticed a significant improvement in my clarity. The drills are practical and easy to fit into a busy schedule. I'm now much more confident in meetings."</div>
                 </div>
-                <div class="bg-custom-gradient p-6 rounded-xl shadow-custom card-hover-effect">
+                <div class="bg-custom-gradient p-6 rounded-xl shadow-custom card-hidden card-hover-effect">
                     <div class="flex items-center gap-4 mb-4">
                         <img src="https://i.ibb.co/nM8RX4z8/Gemini-Generated-Image-ndakf6ndakf6ndak.png" alt="Li Wei M." class="w-16 h-16 rounded-full object-cover">
                         <div class="font-semibold text-accent">Li Wei M.</div>
                     </div>
                     <div class="text-slate-300 text-lg italic">"This course is a game-changer. It feels like having a personal tutor available 24/7. I used to be hesitant to speak up, but practicing with the course material gave me the confidence to join conversations without fear of mispronunciation."</div>
                 </div>
-                <div class="bg-custom-gradient rounded-xl p-6 shadow-custom card-hover-effect">
+                <div class="bg-custom-gradient rounded-xl p-6 shadow-custom card-hidden card-hover-effect">
                     <div class="flex items-center gap-4 mb-4">
                         <img src="https://i.ibb.co/yBWcn7Nc/Gemini-Generated-Image-wp15klwp15klwp15.png" alt="Reneé P." class="w-16 h-16 rounded-full object-cover">
                         <div class="font-semibold text-accent">Reneé P.</div>
@@ -233,7 +245,7 @@
             <h3 class="text-2xl font-bold">Pricing</h3>
             <p class="text-slate-400 mt-4">Choose the plan that's right for you and begin your transformation today.</p>
             <div class="mt-6 grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div class="bg-custom-gradient p-8 rounded-xl shadow-custom border border-custom flex flex-col justify-between card-hover-effect">
+                <div class="bg-custom-gradient p-8 rounded-xl shadow-custom border border-custom card-hidden card-hover-effect">
                     <div>
                         <div class="text-slate-400 text-lg">The 8-Week Transformation</div>
                         <div class="text-5xl font-extrabold mt-2 text-accent">$149</div>
@@ -246,7 +258,7 @@
                     </div>
                     <a href="#" class="mt-8 w-full block text-center rounded-md px-4 py-3 bg-accent text-slate-900 font-extrabold hover:bg-teal-400 transition-colors duration-200 text-lg">Enroll Now</a>
                 </div>
-                <div class="bg-custom-gradient p-8 rounded-xl shadow-custom border border-custom flex flex-col justify-between card-hover-effect">
+                <div class="bg-custom-gradient p-8 rounded-xl shadow-custom border border-custom flex flex-col justify-between card-hidden card-hover-effect">
                     <div>
                         <div class="text-slate-400 text-lg">The 8-Week Transformation + Coaching</div>
                         <div class="text-5xl font-extrabold mt-2 text-accent">$399</div>
@@ -267,7 +279,7 @@
             <p class="text-slate-400 mt-4">Short drills, downloadable cheat sheets, and a mini assessment to get you started.</p>
             <div class="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6">
                 <!-- Video Guide -->
-                <div class="bg-custom-gradient rounded-xl p-6 shadow-custom border border-custom card-hover-effect">
+                <div class="bg-custom-gradient rounded-xl p-6 shadow-custom border border-custom card-hidden card-hover-effect">
                     <div class="font-semibold text-lg text-accent">13-Minute American Accent Guide</div>
                     <p class="text-slate-400 text-sm mt-1">Watch this video to discover the key principles of a clear American accent.</p>
                     <div class="mt-4">
@@ -275,7 +287,7 @@
                     </div>
                 </div>
                 <!-- Pronunciation Cheat Sheet -->
-                <div class="bg-custom-gradient rounded-lg p-6 shadow-custom border border-custom card-hover-effect">
+                <div class="bg-custom-gradient rounded-lg p-6 shadow-custom border border-custom card-hidden card-hover-effect">
                     <div class="font-semibold text-lg text-accent">The American English IPA Chart </div>
                     <div class="text-slate-400 text-sm mt-1">Your Key to Pronouncing Sounds with Percision.</div>
                     <div class="mt-4">
@@ -283,7 +295,7 @@
                     </div>
                 </div>
                 <!-- Conversation Scripts -->
-                <div class="bg-custom-gradient rounded-lg p-6 shadow-custom border border-custom card-hover-effect">
+                <div class="bg-custom-gradient rounded-lg p-6 shadow-custom border border-custom card-hidden card-hover-effect">
                     <div class="font-semibold text-lg text-accent">Shadowing Drill Videos</div>
                     <div class="text-slate-400 text-sm mt-1">Use these to practice real-world conversations.</div>
                     <div class="mt-4">
@@ -491,6 +503,29 @@
             }
         }
         
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const observerOptions = {
+                root: null,
+                rootMargin: "0px",
+                threshold: 0.1
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('card-visible');
+                        entry.target.classList.remove('card-hidden');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.card-hidden').forEach(card => {
+                observer.observe(card);
+            });
+        });
     </script>
 </body>
 </html>
