@@ -42,10 +42,18 @@
         .button-glow {
             animation: pulse-glow 2s infinite;
         }
+        .tag-glow {
+            animation: text-pulse-glow 2s infinite;
+        }
         @keyframes pulse-glow {
             0% { box-shadow: 0 0 5px #00A9A5; }
             50% { box-shadow: 0 0 20px #00A9A5, 0 0 30px #00A9A5; }
             100% { box-shadow: 0 0 5px #00A9A5; }
+        }
+        @keyframes text-pulse-glow {
+            0% { text-shadow: 0 0 5px #00A9A5; }
+            50% { text-shadow: 0 0 20px #00A9A5, 0 0 30px #00A9A5; }
+            100% { text-shadow: 0 0 5px #00A9A5; }
         }
         .tab-button {
             transition: all 0.3s ease;
@@ -118,6 +126,10 @@
         .sidebar.open {
             transform: translateX(0);
         }
+        #calendly-iframe {
+            min-width: 320px;
+            height: 700px;
+        }
     </style>
 </head>
 <body class="antialiased flex flex-col min-h-screen">
@@ -138,7 +150,7 @@
     </header>
 
     <!-- Main Content Area Wrapper -->
-    <div class="flex-grow flex flex-col md:flex-row max-w-6xl mx-auto px-6 relative z-10 pt-24 md:mr-250px">
+    <div class="flex-grow flex flex-col md:flex-row max-w-6xl mx-auto px-6 relative z-10 pt-24">
 
         <main class="flex-grow">
             <!-- Tab Navigation -->
@@ -167,7 +179,7 @@
             <section id="support-section" class="py-4 hidden">
                 <h2 class="text-2xl font-bold text-accent mb-4">Support</h2>
                 <div class="bg-custom-gradient rounded-xl p-6 shadow-custom border border-custom">
-                    <p class="text-slate-400">For any questions or issues, please contact our support team.  </p>
+                    <p class="text-slate-400">For any questions or issues, please contact our support team at <a href="mailto:theaccentcode@outlook.com" class="text-accent hover:underline">theaccentcode@outlook.com</a>.</p>
                 </div>
             </section>
 
@@ -179,9 +191,46 @@
                 <div id="workbooks-content-display" class="bg-custom-gradient rounded-xl p-6 shadow-custom border border-custom"></div>
             </section>
 
+            <!-- Calendly Booking Section -->
+            <section id="book-call-section" class="py-4 hidden">
+                <button onclick="showSection('modules-section', 'modules-tab')" class="mb-4 text-accent hover:text-white transition-colors duration-200">
+                    &larr; Back to Dashboard
+                </button>
+                <h2 class="text-2xl font-bold text-accent mb-4">Book Your Personalized Coaching Call</h2>
+                <div class="bg-custom-gradient rounded-xl p-6 shadow-custom border border-custom">
+                    <p class="text-slate-400 mb-4">Use the calendar below to book your 1-on-1 coaching call with Tima.</p>
+                    <div class="overflow-hidden rounded-lg">
+                        <iframe id="calendly-iframe" src="https://calendly.com/theaccentcode/30min" frameborder="0" style="width: 100%; min-width: 320px; height: 700px;"></iframe>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Elite Student Section -->
+            <section id="elite-section" class="py-4 hidden">
+                <button onclick="showSection('modules-section', 'modules-tab')" class="mb-4 text-accent hover:text-white transition-colors duration-200">
+                    &larr; Back to Dashboard
+                </button>
+                <h2 class="text-2xl font-bold text-accent mb-4">Your Personalized Elite Program</h2>
+                <div class="bg-custom-gradient rounded-xl p-6 shadow-custom border border-custom">
+                    <p class="text-slate-400 mb-4">This is where you can access your personalized practice plan and upload your diagnostic recordings for feedback.</p>
+                    <div class="mt-4">
+                        <div class="flex justify-between items-center bg-slate-800 p-4 rounded-lg border border-custom">
+                            <h4 class="text-lg font-bold text-white">My Personalized Plan</h4>
+                            <a href="#" class="text-accent hover:text-white transition-colors duration-200">View &rarr;</a>
+                        </div>
+                    </div>
+                    <div class="mt-4">
+                        <div class="flex justify-between items-center bg-slate-800 p-4 rounded-lg border border-custom">
+                            <h4 class="text-lg font-bold text-white">Upload Diagnostic Recording</h4>
+                            <a href="#" class="text-accent hover:text-white transition-colors duration-200">Upload &rarr;</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
             <!-- Course Modules Section -->
             <section id="modules-section" class="py-4">
-                <h2 class="text-2xl font-bold text-accent mb-4">Program Details</h2>
+                <h2 class="text-2xl font-bold text-accent mb-4">Program Details <span class="text-xl text-accent font-bold tag-glow">| ELITE STUDENT</span></h2>
                 <div class="grid grid-cols-1 gap-6">
 
                     <!-- Module 1 -->
@@ -275,7 +324,7 @@
                                 <h5 class="text-lg font-bold text-accent">Lesson 5: The "Big Three" American Sounds: The 'R', The Flap 'T', and The Dark 'L'</h5>
                                 <p class="text-slate-400 mt-2"><strong>Outcome:</strong> Target the most characteristic and often difficult sounds of the American accent.</p>
                                 <div class="mt-4 rounded-lg shadow-custom">
-                                    <iframe width="100%" height="315" src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; picture-in-picture" allowfullscreen class="rounded-lg"></iframe>
+                                    <iframe width="100%" height="315" src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen class="rounded-lg"></iframe>
                                 </div>
                             </div>
                             <button id="complete-module2-btn" class="mt-8 w-full block text-center rounded-md px-4 py-3 bg-accent text-slate-900 font-extrabold hover:bg-teal-400 transition-colors duration-200" onclick="markComplete('module2')">Mark Module 2 as Complete</button>
@@ -393,7 +442,7 @@
                             
                             <div class="mt-6">
                                 <h5 class="text-lg font-bold text-accent">Lesson 4: Self-Analysis & The Feedback Loop</h5>
-                                <p class="text-slate-400 mt-2"><strong>Action Item:</strong> Students record themselves shadowing a 1-minute clip, then listen back and compare it to the original. They complete a checklist: Did I match the focus words? Did I link 'get on'? Did I reduce 'to'?</p>
+                                <p class="text-slate-400 mt-2"><strong>Action Item:</strong> Students re-record the same paragraph from the pre-course diagnostic. They listen to their Day 1 and Final Day recordings side-by-side.</p>
                                 <div class="mt-4 rounded-lg shadow-custom">
                                     <iframe width="100%" height="315" src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen class="rounded-lg"></iframe>
                                 </div>
@@ -488,12 +537,26 @@
                             <option value="Puck">Puck (Upbeat)</option>
                             <option value="Zephyr">Zephyr (Bright)</option>
                             <option value="Algieba">Algieba (Smooth)</option>
-                            <option value="Leda">Leda (Youthful)</option>
                         </select>
                         <button id="tts-btn" class="w-full rounded-md px-4 py-3 bg-accent text-slate-900 font-extrabold hover:bg-teal-400 transition-colors duration-200 mt-4">Hear Text</button>
                         <audio id="tts-audio" class="w-full mt-4 rounded-lg hidden"></audio>
                         <div id="api-status-tts" class="text-sm text-slate-400 mt-2 text-center hidden">Generating audio...</div>
                     </div>
+                </div>
+            </section>
+            
+            <!-- Upgrade Section -->
+            <section id="upgrade-section" class="py-12">
+                <div class="bg-custom-gradient rounded-xl p-8 shadow-custom border border-custom flex flex-col items-center text-center">
+                    <h2 class="text-3xl font-bold text-white">Ready for more?</h2>
+                    <ul class="text-slate-400 mt-4 mb-6 space-y-2 text-lg text-left">
+                        <li class="flex items-center gap-2"><svg class="w-6 h-6 flex-shrink-0 text-accent" fill="currentColor" viewBox="0 0 24 24"><path d="M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z"/></svg><span>4x 1-on-1 personalized coaching calls</span></li>
+                        <li class="flex items-center gap-2"><svg class="w-6 h-6 flex-shrink-0 text-accent" fill="currentColor" viewBox="0 0 24 24"><path d="M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z"/></svg><span>Personalized feedback on your diagnostic recordings</span></li>
+                        <li class="flex items-center gap-2"><svg class="w-6 h-6 flex-shrink-0 text-accent" fill="currentColor" viewBox="0 0 24 24"><path d="M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z"/></svg><span>Custom practice plans to target your specific challenges</span></li>
+                    </ul>
+                    <a href="#" onclick="showSection('book-call-section')" class="mt-6 w-full md:w-auto rounded-md px-8 py-4 bg-accent text-slate-900 font-extrabold hover:bg-teal-400 transition-colors duration-200 shadow-custom text-lg button-glow">
+                        Book Your Elite Call
+                    </a>
                 </div>
             </section>
         </main>
@@ -525,13 +588,15 @@
                     <li><a href="#payment-section" onclick="showSection('payment-section'); closeSidebar();" class="flex items-center gap-3 text-white hover:text-accent transition-colors duration-200 font-medium">Payment Details</a></li>
                     <li><a href="#modules-section" onclick="showSection('modules-section'); closeSidebar();" class="flex items-center gap-3 text-white hover:text-accent transition-colors duration-200 font-medium">Program Details</a></li>
                     <li><a href="#progress-section" onclick="showSection('progress-section'); closeSidebar();" class="flex items-center gap-3 text-white hover:text-accent transition-colors duration-200 font-medium">Progress</a></li>
+                    <li><a href="#book-call-section" onclick="showSection('book-call-section'); closeSidebar();" class="flex items-center gap-3 text-white hover:text-accent transition-colors duration-200 font-medium">Book an Elite Call</a></li>
+                    <li><a href="#elite-section" onclick="showSection('elite-section'); closeSidebar();" class="flex items-center gap-3 text-white hover:text-accent transition-colors duration-200 font-medium">Elite Program</a></li>
                     <li><a href="#support-section" onclick="showSection('support-section'); closeSidebar();" class="flex items-center gap-3 text-white hover:text-accent transition-colors duration-200 font-medium">Support</a></li>
                     <li><a href="#" onclick="showWorkbooks()" class="flex items-center gap-3 text-white hover:text-accent transition-colors duration-200 font-medium">Workbooks & Guides</a></li>
                 </ul>
             </nav>
 
             <!-- Progress Bar at the bottom of the sidebar -->
-            <div id="progress-section" class="mt-auto">
+            <div id="progress-section" class="mt-auto pt-6">
                 <h5 class="text-xl font-bold text-accent mb-2">Your Progress</h5>
                 <div class="text-sm text-slate-400 mt-2">
                     <span id="progressText">0% Complete</span>
@@ -714,25 +779,12 @@
             for (let i = 1; i <= totalModules; i++) {
                 const module = document.getElementById(`module${i}`);
                 const completeBtn = document.getElementById(`complete-module${i}-btn`);
+                const isCompleted = i < currentModule;
 
-                if (i < currentModule) {
-                    // This module is already completed
-                    module.classList.remove('module-locked');
-                    if (completeBtn) {
-                        completeBtn.style.display = 'none';
-                    }
-                } else if (i === currentModule) {
-                    // This is the current, active module
-                    module.classList.remove('module-locked');
-                    if (completeBtn) {
-                        completeBtn.style.display = 'block';
-                    }
-                } else {
-                    // This module is locked
-                    module.classList.add('module-locked');
-                    if (completeBtn) {
-                        completeBtn.style.display = 'none';
-                    }
+                module.classList.toggle('module-locked', !isCompleted && i !== currentModule);
+                
+                if (completeBtn) {
+                    completeBtn.style.display = (i === currentModule) ? 'block' : 'none';
                 }
             }
             // Close all modules and open the current one
