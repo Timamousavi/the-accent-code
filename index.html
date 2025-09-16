@@ -10,7 +10,7 @@
         body {
             font-family: 'Source Sans 3', sans-serif;
             background-color: #0A0A0A;
-            background-image: url('https://i.ibb.co/bjgy2Z0F/KDream-Cast-EP02-ALI-MOBINI-You-Tube-Thumbnail-4.png');
+            background-image: url('https://i.ibb.co/FLqLTQNJ/KDream-Cast-EP02-ALI-MOBINI-You-Tube-Thumbnail-5.png');
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
@@ -95,18 +95,21 @@
             animation: pulse-glow 2s infinite;
         }
 
-        /* Discount ribbon styles */
+        /* 3D ribbon styles */
         .discount-ribbon {
             position: absolute;
-            top: 20px;
-            right: -20px;
-            background-color: #ef4444; /* red-500 */
+            top: 25px;
+            right: -30px;
+            width: 150px;
+            background: #ef4444; /* red-500 */
             color: white;
-            padding: 4px 30px;
+            text-align: center;
+            padding: 5px 0;
+            transform: rotate(45deg);
             font-weight: bold;
             font-size: 14px;
-            transform: rotate(45deg);
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+            z-index: 10;
         }
     </style>
 </head>
@@ -119,7 +122,8 @@
         <div class="dot w-2 h-2 bottom-1/4 left-1/2" style="animation-delay: 12s;"></div>
     </div>
 
-    <header class="max-w-6xl mx-auto px-6 py-8 flex items-center justify-end relative z-10">
+    <header class="max-w-6xl mx-auto px-6 py-8 flex items-center justify-between relative z-10">
+        <img src="https://i.ibb.co/DXmS49S/KDream-Cast-EP02-ALI-MOBINI-You-Tube-Thumbnail-6.png" alt="The Accent Code Logo" class="h-16 w-auto">
         <nav class="flex items-center gap-4">
             <a href="#resources" class="text-sm font-medium hover:text-accent transition-colors duration-200">Free Resources</a>
             <a href="#curriculum" class="text-sm font-medium hover:text-accent transition-colors duration-200">Curriculum</a>
@@ -156,7 +160,6 @@
                 <!-- Module 1 -->
                 <div class="bg-custom-gradient rounded-xl p-6 shadow-custom card-hidden card-hover-effect">
                     <div class="text-sm font-semibold text-accent">Module 1 • Week 1</div>
-                    <div class="mt-2 text-xl font-bold">Foundation & Mindset</div>
                     <p class="mt-3 text-slate-400">
                         Stop believing you can't change. We'll show you the science of brain plasticity and give you a clear path to success.
                     </p>
@@ -305,7 +308,7 @@
 
         <section id="resources" class="py-12">
             <h3 class="text-2xl font-bold">Free Resources</h3>
-            <p class="text-slate-400 mt-4">Short drills, downloadable cheat sheets, and a mini assessment to get you started.</p>
+            <p class="text-slate-400 mt-4">Short drills and downloadable cheat sheets to get you started.</p>
             <div class="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6">
                 <!-- Video Guide -->
                 <div class="bg-custom-gradient rounded-xl p-6 shadow-custom border border-custom card-hidden card-hover-effect">
