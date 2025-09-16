@@ -134,6 +134,25 @@
             background: #1A1A1A;
             border-radius: 8px;
         }
+        /* New Button Styles */
+        .enroll-button {
+            background-color: #00A9A5;
+            color: #0A0A0A;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .enroll-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 15px rgba(0, 169, 165, 0.4), 0 0 20px rgba(0, 169, 165, 0.6);
+        }
+        /* Elite Card Glow */
+        @keyframes elite-glow {
+            0% { box-shadow: 0 0 10px rgba(0, 169, 165, 0.5); }
+            50% { box-shadow: 0 0 20px rgba(0, 169, 165, 0.8), 0 0 30px rgba(0, 169, 165, 0.6); }
+            100% { box-shadow: 0 0 10px rgba(0, 169, 165, 0.5); }
+        }
+        .elite-card-glow {
+            animation: elite-glow 2s infinite ease-in-out;
+        }
     </style>
 </head>
 <body class="antialiased">
@@ -253,7 +272,6 @@
                         <select id="voiceSelect" class="w-full bg-slate-800 border-custom text-white rounded-md px-4 py-3 focus:outline-none focus:ring-2 focus:ring-accent" disabled>
                             <option value="Kore">Kore (Firm)</option>
                             <option value="Puck">Puck (Upbeat)</option>
-                            <option value="Zephyr">Zephyr (Bright)</option>
                         </select>
                         <button class="w-full rounded-md px-4 py-3 bg-accent text-slate-900 font-extrabold hover:bg-teal-400 transition-colors duration-200">Unlock TTS Tool</button>
                     </div>
@@ -301,15 +319,15 @@
                             <span class="text-3xl line-through text-red-500 font-bold">$300</span>
                         </div>
                         <ul class="mt-6 text-slate-300 space-y-2 list-none">
-                            <li class="flex items-start gap-2"><span class="text-red-500 font-bold">✓</span><span>Self-paced, 8-week program</span></li>
-                            <li class="flex items-start gap-2"><span class="text-red-500 font-bold">✓</span><span>Includes all 6 modules</span></li>
-                            <li class="flex items-start gap-2"><span class="text-red-500 font-bold">✓</span><span>Lifetime access to all video lessons and resources</span></li>
-                            <li class="flex items-start gap-2"><span class="text-red-500 font-bold">✓</span><span>Guided self-assessment and feedback tools</span></li>
+                            <li class="flex items-start gap-2"><span class="text-green-500 font-bold">✓</span><span>Self-paced, 8-week program</span></li>
+                            <li class="flex items-start gap-2"><span class="text-green-500 font-bold">✓</span><span>Includes all 6 modules</span></li>
+                            <li class="flex items-start gap-2"><span class="text-green-500 font-bold">✓</span><span>Lifetime access to all video lessons and resources</span></li>
+                            <li class="flex items-start gap-2"><span class="text-green-500 font-bold">✓</span><span>Guided self-assessment and feedback tools</span></li>
                         </ul>
                     </div>
-                    <a href="#" class="mt-8 w-full block text-center rounded-md px-4 py-3 bg-accent text-slate-900 font-extrabold hover:bg-teal-400 transition-all duration-200 shadow-custom text-lg hover:translate-y-[-2px]" onclick="handleAuthClick(event, 'core')">Enroll Now</a>
+                    <a href="#" class="mt-8 w-full block text-center rounded-md px-4 py-3 bg-accent text-slate-900 font-extrabold hover:bg-teal-400 transition-all duration-200 shadow-custom text-lg enroll-button" onclick="handleAuthClick(event, 'core')">Enroll Now</a>
                 </div>
-                <div class="bg-custom-gradient p-8 rounded-xl shadow-custom border border-custom flex flex-col justify-between card-hidden card-hover-effect relative overflow-hidden">
+                <div class="bg-custom-gradient p-8 rounded-xl shadow-custom border border-custom flex flex-col justify-between card-hidden card-hover-effect relative overflow-hidden elite-card-glow">
                     <div class="discount-ribbon">43% OFF</div>
                     <div>
                         <div class="text-slate-400 text-lg">The Elite Program</div>
@@ -318,13 +336,13 @@
                             <span class="text-3xl line-through text-red-500 font-bold">$700</span>
                         </div>
                         <ul class="mt-6 text-slate-300 space-y-2 list-none">
-                            <li class="flex items-start gap-2"><span class="text-red-500 font-bold">✓</span><span>Everything in the self-paced course, plus:</span></li>
-                            <li class="flex items-start gap-2"><span class="text-red-500 font-bold">✓</span><span>4x 30-minute one-on-one coaching calls</span></li>
-                            <li class="flex items-start gap-2"><span class="text-red-500 font-bold">✓</span><span>Personalized feedback on your diagnostic recordings</span></li>
-                            <li class="flex items-start gap-2"><span class="text-red-500 font-bold">✓</span><span>Custom practice plans to target your specific challenges</span></li>
+                            <li class="flex items-start gap-2"><span class="text-green-500 font-bold">✓</span><span>Everything in the self-paced course, plus:</span></li>
+                            <li class="flex items-start gap-2"><span class="text-green-500 font-bold">✓</span><span>4x 30-minute one-on-one coaching calls</span></li>
+                            <li class="flex items-start gap-2"><span class="text-green-500 font-bold">✓</span><span>Personalized feedback on your diagnostic recordings</span></li>
+                            <li class="flex items-start gap-2"><span class="text-green-500 font-bold">✓</span><span>Custom practice plans to target your specific challenges</span></li>
                         </ul>
                     </div>
-                    <a href="#" class="mt-8 w-full block text-center rounded-md px-4 py-3 bg-accent text-slate-900 font-extrabold hover:bg-teal-400 transition-all duration-200 shadow-custom text-lg hover:translate-y-[-2px]" onclick="handleAuthClick(event, 'elite')">Enroll with Coaching</a>
+                    <a href="#" class="mt-8 w-full block text-center rounded-md px-4 py-3 bg-accent text-slate-900 font-extrabold hover:bg-teal-400 transition-all duration-200 shadow-custom text-lg enroll-button" onclick="handleAuthClick(event, 'elite')">Enroll with Coaching</a>
                 </div>
             </div>
         </section>
