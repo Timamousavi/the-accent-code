@@ -94,6 +94,20 @@
         .button-glow {
             animation: pulse-glow 2s infinite;
         }
+
+        /* Discount ribbon styles */
+        .discount-ribbon {
+            position: absolute;
+            top: 20px;
+            right: -20px;
+            background-color: #ef4444; /* red-500 */
+            color: white;
+            padding: 4px 30px;
+            font-weight: bold;
+            font-size: 14px;
+            transform: rotate(45deg);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
     </style>
 </head>
 <body class="antialiased">
@@ -130,7 +144,7 @@
                 <form class="mt-6 grid gap-4">
                     <input class="w-full bg-slate-800 border-custom text-white rounded-md px-4 py-3 focus:outline-none focus:ring-2 focus:ring-accent" placeholder="Your Full Name" />
                     <input class="w-full bg-slate-800 border-custom text-white rounded-md px-4 py-3 focus:outline-none focus:ring-2 focus:ring-accent" placeholder="Your Email Address" />
-                    <button onclick="getAICoachResponse()" class="w-full rounded-md px-4 py-3 bg-accent text-slate-900 font-extrabold hover:bg-teal-400 transition-colors duration-200 text-lg">Send My Free Lesson</button>
+                    <button class="w-full rounded-md px-4 py-3 bg-accent text-slate-900 font-extrabold hover:bg-teal-400 transition-colors duration-200 text-lg">Send My Free Lesson</button>
                 </form>
             </div>
         </section>
@@ -199,10 +213,9 @@
                     <h4 class="text-2xl font-bold text-accent">AI Pronunciation Coach</h4>
                     <p class="text-slate-400 mt-2 flex-grow">Your personal tutor for instant, accurate answers on phonetics, rhythm, and more. Ask any question about your course material.</p>
                     <div class="mt-6 flex flex-col gap-4">
-                        <textarea id="coachInput" class="w-full bg-slate-800 border-custom text-white rounded-md px-4 py-3 focus:outline-none focus:ring-2 focus:ring-accent" placeholder="Ask the AI a question about your accent training..."></textarea>
-                        <button onclick="getAICoachResponse()" class="w-full rounded-md px-4 py-3 bg-accent text-slate-900 font-extrabold hover:bg-teal-400 transition-colors duration-200">Ask the Coach</button>
+                        <textarea id="coachInput" class="w-full bg-slate-800 border-custom text-white rounded-md px-4 py-3 focus:outline-none focus:ring-2 focus:ring-accent" placeholder="Ask the AI a question about your accent training..." disabled></textarea>
+                        <button class="w-full rounded-md px-4 py-3 bg-accent text-slate-900 font-extrabold hover:bg-teal-400 transition-colors duration-200">Unlock AI Coach</button>
                     </div>
-                    <div id="coachResponse" class="mt-4 p-4 rounded-md bg-slate-800 text-slate-300 hidden"></div>
                 </div>
 
                 <!-- Text-to-Speech Tool -->
@@ -210,15 +223,14 @@
                     <h4 class="text-2xl font-bold text-accent">Text-to-Speech Tool</h4>
                     <p class="text-slate-400 mt-2 flex-grow">Hear any text pronounced with a native American accent. Choose a voice and practice your listening skills.</p>
                     <div class="mt-6 flex flex-col gap-4">
-                        <textarea id="ttsInput" class="w-full bg-slate-800 border-custom text-white rounded-md px-4 py-3 focus:outline-none focus:ring-2 focus:ring-accent" placeholder="Type or paste text to hear it..."></textarea>
-                        <select id="voiceSelect" class="w-full bg-slate-800 border-custom text-white rounded-md px-4 py-3 focus:outline-none focus:ring-2 focus:ring-accent">
+                        <textarea id="ttsInput" class="w-full bg-slate-800 border-custom text-white rounded-md px-4 py-3 focus:outline-none focus:ring-2 focus:ring-accent" placeholder="Type or paste text to hear it..." disabled></textarea>
+                        <select id="voiceSelect" class="w-full bg-slate-800 border-custom text-white rounded-md px-4 py-3 focus:outline-none focus:ring-2 focus:ring-accent" disabled>
                             <option value="Kore">Kore (Firm)</option>
                             <option value="Puck">Puck (Upbeat)</option>
                             <option value="Zephyr">Zephyr (Bright)</option>
                         </select>
-                        <button onclick="generateTTSAudio()" class="w-full rounded-md px-4 py-3 bg-accent text-slate-900 font-extrabold hover:bg-teal-400 transition-colors duration-200">Generate Speech</button>
+                        <button class="w-full rounded-md px-4 py-3 bg-accent text-slate-900 font-extrabold hover:bg-teal-400 transition-colors duration-200">Unlock TTS Tool</button>
                     </div>
-                    <audio id="audioPlayer" controls class="mt-4 hidden"></audio>
                 </div>
             </div>
         </section>
@@ -254,37 +266,39 @@
             <h3 class="text-2xl font-bold">Pricing</h3>
             <p class="text-slate-400 mt-4">Choose the plan that's right for you and begin your transformation today.</p>
             <div class="mt-6 grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div class="bg-custom-gradient p-8 rounded-xl shadow-custom border border-custom card-hidden card-hover-effect">
+                <div class="bg-custom-gradient p-8 rounded-xl shadow-custom border border-custom card-hidden card-hover-effect relative overflow-hidden">
+                    <div class="discount-ribbon">50% OFF</div>
                     <div>
                         <div class="text-slate-400 text-lg">The Core Program</div>
                         <div class="mt-2 flex items-baseline gap-2">
                             <span class="text-5xl font-extrabold text-accent">$149</span>
                             <span class="text-3xl line-through text-red-500 font-bold">$300</span>
                         </div>
-                        <ul class="mt-6 text-slate-300 space-y-2 list-disc list-inside">
-                            <li>Self-paced, 8-week program</li>
-                            <li>Includes all 6 modules</li>
-                            <li>Lifetime access to all video lessons and resources</li>
-                            <li>Guided self-assessment and feedback tools</li>
+                        <ul class="mt-6 text-slate-300 space-y-2 list-none">
+                            <li class="flex items-start gap-2"><span class="text-red-500 font-bold">✓</span><span>Self-paced, 8-week program</span></li>
+                            <li class="flex items-start gap-2"><span class="text-red-500 font-bold">✓</span><span>Includes all 6 modules</span></li>
+                            <li class="flex items-start gap-2"><span class="text-red-500 font-bold">✓</span><span>Lifetime access to all video lessons and resources</span></li>
+                            <li class="flex items-start gap-2"><span class="text-red-500 font-bold">✓</span><span>Guided self-assessment and feedback tools</span></li>
                         </ul>
                     </div>
-                    <a href="#" class="mt-8 w-full block text-center rounded-md px-4 py-3 bg-accent text-slate-900 font-extrabold hover:bg-teal-400 transition-colors duration-200 text-lg">Enroll Now</a>
+                    <a href="#" class="mt-8 w-full block text-center rounded-md px-4 py-3 bg-accent text-slate-900 font-extrabold hover:bg-teal-400 transition-all duration-200 shadow-custom text-lg hover:translate-y-[-2px]">Enroll Now</a>
                 </div>
-                <div class="bg-custom-gradient p-8 rounded-xl shadow-custom border border-custom flex flex-col justify-between card-hidden card-hover-effect">
+                <div class="bg-custom-gradient p-8 rounded-xl shadow-custom border border-custom flex flex-col justify-between card-hidden card-hover-effect relative overflow-hidden">
+                    <div class="discount-ribbon">43% OFF</div>
                     <div>
                         <div class="text-slate-400 text-lg">The Elite Program</div>
                         <div class="mt-2 flex items-baseline gap-2">
                             <span class="text-5xl font-extrabold text-accent">$399</span>
                             <span class="text-3xl line-through text-red-500 font-bold">$700</span>
                         </div>
-                        <ul class="mt-6 text-slate-300 space-y-2 list-disc list-inside">
-                            <li>Everything in the self-paced course, plus:</li>
-                            <li>4x 30-minute one-on-one coaching calls</li>
-                            <li>Personalized feedback on your diagnostic recordings</li>
-                            <li>Custom practice plans to target your specific challenges</li>
+                        <ul class="mt-6 text-slate-300 space-y-2 list-none">
+                            <li class="flex items-start gap-2"><span class="text-red-500 font-bold">✓</span><span>Everything in the self-paced course, plus:</span></li>
+                            <li class="flex items-start gap-2"><span class="text-red-500 font-bold">✓</span><span>4x 30-minute one-on-one coaching calls</span></li>
+                            <li class="flex items-start gap-2"><span class="text-red-500 font-bold">✓</span><span>Personalized feedback on your diagnostic recordings</span></li>
+                            <li class="flex items-start gap-2"><span class="text-red-500 font-bold">✓</span><span>Custom practice plans to target your specific challenges</span></li>
                         </ul>
                     </div>
-                    <a href="#" class="mt-8 w-full block text-center rounded-md px-4 py-3 bg-accent text-slate-900 font-extrabold hover:bg-teal-400 transition-colors duration-200 text-lg">Enroll with Coaching</a>
+                    <a href="#" class="mt-8 w-full block text-center rounded-md px-4 py-3 bg-accent text-slate-900 font-extrabold hover:bg-teal-400 transition-all duration-200 shadow-custom text-lg hover:translate-y-[-2px]">Enroll with Coaching</a>
                 </div>
             </div>
         </section>
@@ -337,188 +351,6 @@
             </div>
         </div>
     </footer>
-    <script>
-        const apiKey = typeof __gemini_api_key__ !== 'undefined' ? __gemini_api_key__ : '';
-        
-        // Helper function to decode base64 and create a WAV blob
-        function base64ToArrayBuffer(base64) {
-            const binaryString = window.atob(base64);
-            const len = binaryString.length;
-            const bytes = new Uint8Array(len);
-            for (let i = 0; i < len; i++) {
-                bytes[i] = binaryString.charCodeAt(i);
-            }
-            return bytes.buffer;
-        }
-
-        function pcmToWav(pcmData, sampleRate) {
-            const dataLength = pcmData.length * 2;
-            const buffer = new ArrayBuffer(44 + dataLength);
-            const view = new DataView(buffer);
-            
-            // RIFF chunk descriptor
-            writeString(view, 0, 'RIFF');
-            view.setUint32(4, 36 + dataLength, true);
-            writeString(view, 8, 'WAVE');
-            
-            // fmt sub-chunk
-            writeString(view, 12, 'fmt ');
-            view.setUint32(16, 16, true); // Subchunk1Size
-            view.setUint16(20, 1, true); // AudioFormat (1=PCM)
-            view.setUint16(22, 1, true); // NumChannels
-            view.setUint32(24, sampleRate, true);
-            view.setUint32(28, sampleRate * 2, true); // ByteRate
-            view.setUint16(32, 2, true); // BlockAlign
-            view.setUint16(34, 16, true); // BitsPerSample
-            
-            // data sub-chunk
-            writeString(view, 36, 'data');
-            view.setUint32(40, dataLength, true);
-            
-            // Write PCM data
-            for (let i = 0; i < pcmData.length; i++) {
-                view.setInt16(44 + i * 2, pcmData[i], true);
-            }
-            
-            return new Blob([view], { type: 'audio/wav' });
-        }
-
-        function writeString(view, offset, string) {
-            for (let i = 0; i < string.length; i++) {
-                view.setUint8(offset + i, string.charCodeAt(i));
-            }
-        }
-        
-        // --- AI Pronunciation Coach Logic ---
-        async function getAICoachResponse() {
-            const userInput = document.getElementById('coachInput').value;
-            const responseDiv = document.getElementById('coachResponse');
-            if (!userInput) {
-                return;
-            }
-
-            responseDiv.style.display = 'block';
-            responseDiv.innerHTML = 'Thinking...';
-
-            const systemPrompt = "You are an expert American English pronunciation coach. Provide clear, concise, and helpful advice to a student learning the American accent. Use simple language and encouraging tone. Focus on practical tips and phonetic explanations.";
-            
-            const payload = {
-                contents: [{ parts: [{ text: userInput }] }],
-                systemInstruction: {
-                    parts: [{ text: systemPrompt }]
-                },
-                tools: [{ "google_search": {} }],
-            };
-
-            const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-05-20:generateContent?key=${apiKey}`;
-
-            try {
-                const response = await fetch(apiUrl, {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify(payload)
-                });
-
-                if (!response.ok) {
-                    throw new Error(`API call failed with status: ${response.status}`);
-                }
-
-                const result = await response.json();
-                const text = result.candidates?.[0]?.content?.parts?.[0]?.text || "Sorry, I couldn't generate a response. Please try again.";
-                responseDiv.innerHTML = text;
-
-            } catch (error) {
-                console.error('Error fetching AI response:', error);
-                responseDiv.innerHTML = 'An error occurred. Please try again later.';
-            }
-        }
-
-        // --- TTS Tool Logic ---
-        async function generateTTSAudio() {
-            const textInput = document.getElementById('ttsInput').value;
-            const voiceName = document.getElementById('voiceSelect').value;
-            const audioPlayer = document.getElementById('audioPlayer');
-
-            if (!textInput) {
-                return;
-            }
-
-            const payload = {
-                contents: [{
-                    parts: [{ text: `Say this phrase in a clear, standard American accent: "${textInput}"` }]
-                }],
-                generationConfig: {
-                    responseModalities: ["AUDIO"],
-                    speechConfig: {
-                        voiceConfig: {
-                            prebuiltVoiceConfig: { voiceName: voiceName }
-                        }
-                    }
-                },
-            };
-
-            const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-tts:generateContent?key=${apiKey}`;
-
-            audioPlayer.style.display = 'none';
-            audioPlayer.pause();
-            audioPlayer.removeAttribute('src');
-
-            try {
-                const response = await fetch(apiUrl, {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify(payload)
-                });
-                
-                if (!response.ok) {
-                    throw new Error(`API call failed with status: ${response.status}`);
-                }
-
-                const result = await response.json();
-                const part = result?.candidates?.[0]?.content?.parts?.[0];
-                const audioData = part?.inlineData?.data;
-                const mimeType = part?.inlineData?.mimeType;
-
-                if (audioData && mimeType && mimeType.startsWith("audio/")) {
-                    const sampleRateMatch = mimeType.match(/rate=(\d+)/);
-                    if (!sampleRateMatch) {
-                        throw new Error('Could not determine sample rate from MIME type.');
-                    }
-                    const sampleRate = parseInt(sampleRateMatch[1], 10);
-                    const pcmData = base64ToArrayBuffer(audioData);
-                    const pcm16 = new Int16Array(pcmData);
-                    const wavBlob = pcmToWav(pcm16, sampleRate);
-                    const audioUrl = URL.createObjectURL(wavBlob);
-                    audioPlayer.src = audioUrl;
-                    audioPlayer.style.display = 'block';
-                } else {
-                    // Replaced alert with a custom message box
-                    const messageBox = document.createElement('div');
-                    messageBox.className = 'fixed inset-0 flex items-center justify-center bg-black bg-opacity-75 z-50';
-                    messageBox.innerHTML = `
-                        <div class="bg-gray-800 p-6 rounded-lg text-white text-center shadow-lg">
-                            <p>An error occurred. The audio could not be generated.</p>
-                            <button onclick="this.parentElement.parentElement.remove()" class="mt-4 px-4 py-2 bg-accent text-slate-900 rounded-md">OK</button>
-                        </div>
-                    `;
-                    document.body.appendChild(messageBox);
-                }
-            } catch (error) {
-                console.error('Error fetching TTS audio:', error);
-                // Replaced alert with a custom message box
-                const messageBox = document.createElement('div');
-                messageBox.className = 'fixed inset-0 flex items-center justify-center bg-black bg-opacity-75 z-50';
-                messageBox.innerHTML = `
-                    <div class="bg-gray-800 p-6 rounded-lg text-white text-center shadow-lg">
-                        <p>An error occurred. Please try again later.</p>
-                        <button onclick="this.parentElement.parentElement.remove()" class="mt-4 px-4 py-2 bg-accent text-slate-900 rounded-md">OK</button>
-                    </div>
-                `;
-                document.body.appendChild(messageBox);
-            }
-        }
-        
-    </script>
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             const observerOptions = {
