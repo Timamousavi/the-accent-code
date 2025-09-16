@@ -1,0 +1,12 @@
+{
+  "rewrites": [
+    {
+      "source": "/core",
+      "destination": "/core-dashboard"
+    },
+    {
+      "source": "/elite",
+      "destination": "/elite-dashboard"
+    }
+  ]
+}
